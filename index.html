@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,128 +7,188 @@
 <title>ROBO-BUDDY TV | Little Living Television</title>
 <style>
 :root{
-  --bg:#17140f;--panel:#242018;--panel2:#30291e;
-  --line:#51432e;--text:#fff3d6;--muted:#b5a78b;
-  --brown:#94613c;--dark:#56351f;--gold:#ffd44e;
-  --light:#d49a63;--green:#8cff88;--red:#ff7777;
+  --bg:#15120f;
+  --panel:#262019;
+  --panel2:#34281e;
+  --line:#695038;
+  --text:#fff4dd;
+  --muted:#c0ae91;
+  --brown:#94613c;
+  --dark:#56351f;
+  --gold:#ffd44e;
+  --light:#d49a63;
+  --green:#8cff88;
+  --teal:#57f4e5;
+  --pink:#ff7dcc;
+  --purple:#c49bff;
+  --blue:#72cfff;
+  --red:#ff7777;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;min-height:100vh;color:var(--text);
   font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-  background:radial-gradient(ellipse at 50% 0%,#44321d,transparent 45%),
-  linear-gradient(145deg,#17140f,#201a13 60%,#12100c);
+  background:
+    radial-gradient(ellipse at 12% 0%,#245b5240,transparent 35rem),
+    radial-gradient(ellipse at 92% 8%,#693d7840,transparent 34rem),
+    radial-gradient(ellipse at 50% 0%,#44321d,transparent 45%),
+    linear-gradient(145deg,#15120f,#201a13 60%,#12100c);
 }
 button,input{font:inherit}
 button{cursor:pointer;-webkit-tap-highlight-color:transparent}
 button:focus-visible,input:focus-visible,[tabindex]:focus-visible{
-  outline:3px solid var(--gold);outline-offset:3px
+  outline:3px solid var(--teal);outline-offset:3px
 }
 button:disabled{opacity:.38;cursor:not-allowed}
+button:not(:disabled):active{transform:scale(.98)}
 .wrap{width:min(1100px,calc(100% - 28px));margin:auto}
 header{
   padding:21px 0;display:flex;justify-content:space-between;
-  align-items:center;gap:12px;border-bottom:1px solid #ffffff12
+  align-items:center;gap:12px;border-bottom:1px solid #ffffff16
 }
 .logo{display:flex;align-items:center;gap:12px}
 .logo-mark{
   width:46px;height:46px;display:grid;place-items:center;
-  background:var(--gold);color:#35220d;border:3px solid #fff0a0;
-  border-radius:12px;font-size:24px;box-shadow:0 0 24px #ffd44e30
+  background:linear-gradient(135deg,#fff08b,#ffd44e,#ffab65);
+  color:#35220d;border:3px solid #fff0a0;border-radius:13px;
+  font-size:24px;box-shadow:0 0 27px #ffd44e45
 }
 .logo h1{margin:0;font-size:18px;letter-spacing:2px}
 .logo small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}
 .status-pill{
-  border:1px solid var(--line);background:#ffffff07;
+  border:1px solid var(--line);
+  background:linear-gradient(120deg,#57f4e511,#c49bff11);
   padding:9px 12px;border-radius:99px;color:var(--muted);font-size:11px
 }
 .status-pill b{color:var(--green)}
 .intro{padding:27px 0 15px}
-.eyebrow{color:var(--gold);font-size:10px;letter-spacing:2.5px;font-weight:900}
-.intro h2{font-size:clamp(28px,5vw,42px);margin:9px 0;letter-spacing:-1.5px}
+.eyebrow{
+  color:var(--teal);font-size:10px;letter-spacing:2.5px;font-weight:950
+}
+.intro h2{
+  font-size:clamp(28px,5vw,42px);margin:9px 0;
+  letter-spacing:-1.5px
+}
 .intro p{color:var(--muted);max-width:670px;line-height:1.7;margin:0}
-.dashboard{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:12px 0 25px}
+.dashboard{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:15px;align-items:start;padding:12px 0 25px
+}
 .panel{
   min-width:0;border:1px solid var(--line);
-  background:linear-gradient(150deg,#2c261c,#211c15);
-  border-radius:18px;overflow:hidden;box-shadow:0 18px 40px #0002
+  background:linear-gradient(145deg,#30251bdd,#211a16ee);
+  border-radius:18px;overflow:hidden;
+  box-shadow:0 18px 40px #0003
 }
 .panel-heading{
-  padding:15px 17px;border-bottom:1px solid #ffffff0d;
-  display:flex;justify-content:space-between;align-items:center;gap:10px
+  padding:15px 17px;border-bottom:1px solid #ffffff10;
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  background:linear-gradient(100deg,#ffd44e0a,#57f4e508,#c49bff08)
 }
 .panel-heading h3{margin:0;font-size:12px;letter-spacing:1px}
 .panel-heading span{font-size:10px;color:var(--muted)}
 .stage{
   padding:18px 10px 17px;min-height:390px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  background:linear-gradient(#ffffff05 1px,transparent 1px),
-  linear-gradient(90deg,#ffffff05 1px,transparent 1px),
-  radial-gradient(ellipse at center,#56402244,transparent 70%);
+  background:
+    linear-gradient(#ffffff07 1px,transparent 1px),
+    linear-gradient(90deg,#ffffff07 1px,transparent 1px),
+    radial-gradient(ellipse at center,#ffd44e12,transparent 70%);
   background-size:24px 24px,24px 24px,auto
 }
 .speech{
   max-width:330px;width:100%;min-height:48px;text-align:center;
-  background:#16130f;border:1px solid #685435;padding:11px 13px;
-  border-radius:12px;color:#f9e4b7;font-size:12px;line-height:1.6;
-  margin-bottom:27px
+  background:linear-gradient(130deg,#172a27,#21192b,#251d12);
+  border:1px solid #57f4e555;padding:11px 13px;border-radius:12px;
+  color:#fff0c5;font-size:12px;line-height:1.6;margin-bottom:27px;
+  box-shadow:0 0 22px #57f4e50a
 }
 .channel-label{
-  color:var(--gold);font-weight:900;font-size:9px;
-  letter-spacing:2px;margin-bottom:10px
+  color:var(--teal);font-weight:950;font-size:9px;
+  letter-spacing:2px;margin-bottom:10px;text-align:center
 }
 
-/* THE TV: one chunky screen, no humanoid body or limbs. */
+/* A chunky vintage television, with no arms or legs. */
 .tv-wrap{width:min(100%,365px);position:relative;padding-top:30px}
-.antenna{
-  position:absolute;top:0;left:0;right:0;height:46px;pointer-events:none
-}
+.antenna{position:absolute;top:0;left:0;right:0;height:46px;pointer-events:none}
 .antenna-wire{
   position:absolute;left:48%;top:4px;width:5px;height:30px;
-  background:var(--gold);border:1px solid #362514;
-  transform:rotate(-23deg);transform-origin:bottom
+  background:linear-gradient(90deg,#b18030,var(--gold));
+  border:1px solid #362514;transform:rotate(-23deg);
+  transform-origin:bottom
 }
 .antenna-wire.two{
   left:53%;transform:rotate(24deg);height:34px;top:0
 }
 .antenna-tip{
   position:absolute;top:0;left:-6px;width:14px;height:14px;
-  border:3px solid var(--dark);border-radius:4px;background:var(--gold);
-  box-shadow:0 0 12px #ffd44e70
+  border:3px solid var(--dark);border-radius:4px;
+  background:var(--gold);box-shadow:0 0 13px #ffd44e90
 }
 .tv-shell{
-  --case:var(--brown);--case-light:var(--light);
-  --case-dark:var(--dark);--accent:var(--gold);
+  --case:var(--brown);
+  --case-light:var(--light);
+  --case-dark:var(--dark);
+  --accent:var(--gold);
   position:relative;width:100%;height:235px;
   border:7px solid var(--case-dark);border-radius:25px;
   background:linear-gradient(135deg,var(--case-light),var(--case) 65%,#71472d);
   box-shadow:inset 0 0 0 3px #ffffff15,0 13px 22px #0004;
-  padding:12px;transition:filter .3s,background .3s
+  padding:12px;transition:filter .3s,background .3s,box-shadow .3s
 }
 .tv-shell[data-skin="moss"]{
-  --case:#777a42;--case-light:#c5b96b;--case-dark:#424121;--accent:#e8f77a
+  --case:#777a42;--case-light:#c5b96b;
+  --case-dark:#424121;--accent:#e8f77a
 }
 .tv-shell[data-skin="lilac"]{
-  --case:#8a668b;--case-light:#c69bc0;--case-dark:#4b3652;--accent:#ffe071
+  --case:#8a668b;--case-light:#c69bc0;
+  --case-dark:#4b3652;--accent:#ffe071
 }
 .tv-shell[data-skin="blue"]{
-  --case:#507887;--case-light:#8fb8bc;--case-dark:#2a4551;--accent:#ffdb63
+  --case:#507887;--case-light:#8fb8bc;
+  --case-dark:#2a4551;--accent:#ffdb63
 }
-.tv-shell.off{filter:brightness(.62) saturate(.45)}
-.tv-shell.charging:not(.off){animation:chargePulse 1.5s infinite}
-@keyframes chargePulse{50%{box-shadow:inset 0 0 0 3px #ffffff15,0 0 25px #ffd44e65}}
+.tv-shell.off{filter:brightness(.55) saturate(.35)}
+.tv-shell.charging:not(.off){
+  animation:chargePulse 1.5s infinite
+}
+@keyframes chargePulse{
+  50%{box-shadow:inset 0 0 0 3px #ffffff15,0 0 28px #ffd44e77}
+}
 .screen-frame{
   position:absolute;left:12px;top:12px;bottom:12px;width:72%;
-  background:var(--case-dark);border:3px solid #38271a;border-radius:19px;
-  padding:8px;box-shadow:inset 0 0 0 2px #ffffff0c
+  background:var(--case-dark);border:3px solid #38271a;
+  border-radius:19px;padding:8px;
+  box-shadow:inset 0 0 0 2px #ffffff0c
 }
 .crt-screen{
+  --ink:#eaff9c;
   width:100%;height:100%;position:relative;overflow:hidden;
   background:radial-gradient(ellipse at center,#293b22,#10180f 83%);
   border:3px solid #151911;border-radius:20px 20px 25px 25px;
   box-shadow:inset 0 0 25px #0009,inset 0 0 7px #c7ff7c16;
   display:flex;align-items:center;justify-content:center;
-  transition:background .3s
+  transition:background .3s,box-shadow .3s
+}
+.crt-screen[data-channel="1"]{
+  --ink:#ff9cde;
+  background:radial-gradient(ellipse at center,#572647,#170f25 82%);
+  box-shadow:inset 0 0 27px #0009,0 0 15px #ff4fc01c
+}
+.crt-screen[data-channel="2"]{
+  --ink:#80e3ff;
+  background:radial-gradient(ellipse at center,#174b66,#0b1325 82%);
+  box-shadow:inset 0 0 27px #0009,0 0 15px #57caff20
+}
+.crt-screen[data-channel="3"]{
+  --ink:#ffeaa0;
+  background:radial-gradient(ellipse at center,#5b4820,#17130d 82%)
+}
+.crt-screen[data-channel="4"]{
+  --ink:#d9a0ff;
+  background:radial-gradient(ellipse at center,#46245f,#110d24 82%);
+  box-shadow:inset 0 0 27px #0009,0 0 15px #bb6dff20
 }
 .crt-screen:before{
   content:"";position:absolute;inset:0;pointer-events:none;z-index:3;
@@ -137,27 +196,19 @@ header{
   opacity:.8
 }
 .crt-screen:after{
-  content:"";position:absolute;left:-30%;top:-20%;width:50%;height:150%;
-  background:linear-gradient(90deg,transparent,#ffffff0b,transparent);
+  content:"";position:absolute;left:-35%;top:-20%;width:45%;height:150%;
+  background:linear-gradient(90deg,transparent,#ffffff10,transparent);
   transform:rotate(18deg);pointer-events:none
 }
-.tv-shell.dirty .crt-screen{
-  background:radial-gradient(ellipse at center,#293322,#15170f 83%)
-}
-.tv-shell.dirty .crt-screen:after{
-  background:radial-gradient(circle,#ffffff2c 0 1px,transparent 2px);
-  background-size:23px 17px
-}
 .tv-face{
-  z-index:2;position:relative;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:16px;
-  color:var(--accent);text-shadow:0 0 13px #d8ff8b65;
-  transition:opacity .3s
+  z-index:2;position:relative;
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:16px
 }
 .eyes{display:flex;gap:27px;align-items:center;height:26px}
 .eye{
   width:12px;height:20px;border-radius:5px 5px 3px 3px;
-  background:var(--accent);box-shadow:0 0 9px #e7ff9a88;
+  background:var(--ink);box-shadow:0 0 12px var(--ink);
   transition:height .18s,transform .18s
 }
 .tv-shell[data-emotion="sleepy"] .eye,
@@ -166,46 +217,38 @@ header{
 .tv-shell[data-emotion="grumpy"] .eye:first-child{transform:rotate(13deg)}
 .tv-shell[data-emotion="grumpy"] .eye:last-child{transform:rotate(-13deg)}
 .tv-mouth{
-  width:30px;height:13px;border-bottom:4px solid var(--accent);
-  border-radius:0 0 50% 50%;transition:all .2s
+  width:30px;height:13px;border-bottom:4px solid var(--ink);
+  border-radius:0 0 50% 50%;transition:all .2s;
+  filter:drop-shadow(0 0 4px var(--ink))
 }
 .tv-shell[data-emotion="happy"] .tv-mouth{height:15px;width:32px}
 .tv-shell[data-emotion="grumpy"] .tv-mouth{
-  height:4px;border-bottom:0;border-top:4px solid var(--accent);
+  height:4px;border-bottom:0;border-top:4px solid var(--ink);
   border-radius:50% 50% 0 0
 }
 .tv-shell[data-emotion="curious"] .tv-mouth{
-  width:12px;height:12px;border:3px solid var(--accent);border-radius:50%
+  width:12px;height:12px;border:3px solid var(--ink);border-radius:50%
 }
 .tv-shell[data-emotion="sleepy"] .tv-mouth{
-  width:15px;height:4px;border:0;background:var(--accent)
+  width:15px;height:4px;border:0;background:var(--ink)
 }
-.tv-extra{font-size:10px;letter-spacing:2px;font-weight:900;opacity:.7}
-.tv-shell.off .tv-face,.tv-shell.off .tv-extra{opacity:0}
-.tv-shell.off .crt-screen{background:#090b08;box-shadow:inset 0 0 30px #000}
 .tv-controls{
   position:absolute;right:7px;top:22px;bottom:16px;width:20%;
   display:flex;flex-direction:column;align-items:center;gap:12px
 }
-.control-label{font-size:8px;letter-spacing:1px;color:#ffe5a0;font-weight:1000}
+.control-label{font-size:8px;letter-spacing:1px;color:#fff0ae;font-weight:1000}
 .dial{
   width:34px;height:34px;border:4px solid var(--case-dark);
-  border-radius:50%;background:linear-gradient(135deg,#f4dc9c,var(--accent),#ac792c);
+  border-radius:50%;
+  background:conic-gradient(#fff6c6,var(--accent),#b96a44,#fff6c6);
   box-shadow:0 2px 0 #0003;position:relative
 }
 .dial:after{
   content:"";position:absolute;left:12px;top:1px;width:3px;height:10px;
   background:var(--case-dark);border-radius:2px
 }
-.tv-shell.off .dial{filter:brightness(.65)}
-.speaker{
-  display:grid;grid-template-columns:repeat(3,4px);gap:4px;
-  padding:2px
-}
-.speaker i{
-  width:4px;height:4px;border-radius:50%;
-  background:var(--case-dark);box-shadow:0 1px 0 #ffffff19
-}
+.speaker{display:grid;grid-template-columns:repeat(3,4px);gap:4px;padding:2px}
+.speaker i{width:4px;height:4px;border-radius:50%;background:var(--case-dark)}
 .power-light{
   width:10px;height:10px;border-radius:3px;background:#3a2718;
   border:2px solid var(--case-dark)
@@ -216,7 +259,6 @@ header{
 .tv-shell.charging:not(.off) .power-light{
   background:var(--gold);box-shadow:0 0 15px var(--gold)
 }
-.tv-shell.off .power-light{background:#382d21;box-shadow:none}
 .sticker{
   position:absolute;z-index:5;top:-11px;right:22%;
   font-size:23px;filter:drop-shadow(0 2px 2px #0006);
@@ -224,12 +266,13 @@ header{
 }
 .tv-dead-label{
   display:none;position:absolute;z-index:4;bottom:12px;left:0;right:0;
-  color:#d0d0bb;text-align:center;font-size:8px;letter-spacing:2px;font-weight:900
+  color:#d0d0bb;text-align:center;font-size:8px;
+  letter-spacing:2px;font-weight:900
 }
 .tv-shell.off .tv-dead-label{display:block}
 .tv-sleep-label{
-  position:absolute;top:8px;left:10px;font-size:9px;color:var(--accent);
-  font-weight:900;opacity:0;z-index:4
+  position:absolute;top:8px;left:10px;font-size:9px;
+  color:var(--accent);font-weight:900;opacity:0;z-index:4
 }
 .tv-shell.sleeping:not(.off) .tv-sleep-label{opacity:.8}
 .tv-caption{
@@ -250,39 +293,52 @@ header{
 .meter-fill.energy{background:linear-gradient(90deg,#dfa62d,#ffe77c)}
 .meter-fill.hunger{background:linear-gradient(90deg,#76c76a,#bdff90)}
 .meter-fill.mood{background:linear-gradient(90deg,#ec8eb4,#ffc3cc)}
-.meter-fill.clean{background:linear-gradient(90deg,#65c8d4,#b8ffeb)}
+.meter-fill.clean{background:linear-gradient(90deg,#57d7e1,#b8ffeb)}
 .meter-fill.bond{background:linear-gradient(90deg,#ffbd54,#fff09a)}
-.meter-fill.low{background:var(--red)}
+.meter-fill.low{background:linear-gradient(90deg,#bd333c,#ff7777)}
 .meter-foot{font-size:10px;color:var(--muted);margin-top:5px}
 .control-group{padding:15px 17px;border-top:1px solid #ffffff0d}
 .control-group h4{margin:0 0 11px;font-size:11px;letter-spacing:1px;color:#e5d1a8}
 .control-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .action-btn{
   min-width:0;padding:11px 8px;border-radius:10px;
-  border:1px solid #ffffff16;background:#ffffff08;color:var(--text);
-  font-size:11px;font-weight:850;transition:background .15s,border-color .15s
+  border:1px solid #ffffff20;
+  background:linear-gradient(130deg,#ffffff0b,#57f4e506);
+  color:var(--text);font-size:11px;font-weight:850;
+  transition:background .15s,border-color .15s
 }
-.action-btn:hover:not(:disabled){background:#ffffff12;border-color:#ffd44e77}
+.action-btn:hover:not(:disabled){
+  background:#57f4e51b;border-color:#57f4e577
+}
 .action-btn .emoji{font-size:18px;display:block;margin-bottom:5px}
-.action-btn.primary{border-color:#d4a43266;background:#ffd44e12;color:#ffe8a4}
+.action-btn.primary{
+  border-color:#d4a43288;
+  background:linear-gradient(115deg,#ffd44e20,#ff7dcc0c);
+  color:#ffe8a4
+}
 .action-btn.charge{
   grid-column:1/-1;display:flex;align-items:center;justify-content:center;
-  gap:9px;background:linear-gradient(110deg,#ffd44e,#ffea9a);
+  gap:9px;background:linear-gradient(110deg,#ffd44e,#ffea9a,#ffbd82);
   color:#34220c;border:0;font-size:12px
 }
 .action-btn.charge .emoji{display:inline;margin:0;font-size:18px}
-.action-btn.charge.charging{background:linear-gradient(110deg,#8cff88,#d4ffb3)}
+.action-btn.charge.charging{background:linear-gradient(110deg,#8cff88,#57f4e5)}
 .robot-note{
-  padding:11px;border-radius:10px;background:#0002;border:1px dashed #8e7445;
+  padding:11px;border-radius:10px;
+  background:linear-gradient(115deg,#57f4e50d,#c49bff0d,#ffd44e0d);
+  border:1px dashed #8e7445;
   font-size:11px;color:var(--muted);line-height:1.6
 }
 .skin-row{display:flex;gap:7px;flex-wrap:wrap}
 .skin-btn{
-  padding:7px 10px;border-radius:8px;border:1px solid var(--line);
+  padding:8px 10px;border-radius:8px;border:1px solid var(--line);
   color:var(--text);background:#ffffff08;font-size:10px;font-weight:900
 }
-.skin-btn.active{border-color:var(--gold);background:#ffd44e16;color:var(--gold)}
-.mini-game{margin-top:12px;padding:13px;border:1px solid #8e7445;border-radius:12px;background:#16130f}
+.skin-btn.active{border-color:var(--teal);background:#57f4e516;color:var(--teal)}
+.mini-game{
+  margin-top:12px;padding:13px;border:1px solid #8e7445;
+  border-radius:12px;background:linear-gradient(140deg,#16130f,#211629)
+}
 .mini-game h4{margin:0 0 7px;color:var(--gold);font-size:12px}
 .mini-game p{color:var(--muted);font-size:11px;line-height:1.6}
 .pixel-target{font-size:30px;text-align:center;padding:4px}
@@ -291,32 +347,31 @@ header{
   min-width:0;min-height:47px;background:#ffffff08;color:var(--gold);
   border:1px solid var(--line);border-radius:9px;font-size:22px
 }
-.pixel-btn:hover{background:#ffd44e16;border-color:var(--gold)}
+.pixel-btn:hover:not(:disabled){background:#ffd44e16;border-color:var(--gold)}
 .log{padding:15px 17px}
 .log-top{display:flex;justify-content:space-between;gap:10px;align-items:center}
 .log-top h3{margin:0;font-size:12px;letter-spacing:1px}
 .log-top button{color:var(--muted);background:none;border:0;font-size:10px}
 .log-list{margin-top:12px;display:grid;gap:8px}
 .log-entry{display:flex;gap:9px;align-items:flex-start;color:var(--muted);font-size:11px;line-height:1.5}
-.log-entry span{color:var(--gold)}
-.collection{
-  display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:10px
-}
+.log-entry span{color:var(--pink)}
+.collection{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:10px}
 .collection span{
   min-width:30px;height:30px;display:grid;place-items:center;
-  border:1px solid var(--line);background:#ffffff08;border-radius:8px
+  border:1px solid #57f4e544;background:#57f4e50c;border-radius:8px
 }
 .collection .empty{font-size:10px;color:var(--muted);padding:0 8px}
 .toast{
   position:fixed;left:50%;bottom:20px;z-index:20;
   transform:translate(-50%,20px);opacity:0;pointer-events:none;
-  max-width:calc(100% - 28px);text-align:center;
-  padding:12px 16px;border-radius:12px;border:1px solid #ffd44e66;
-  background:#251d12;color:var(--text);box-shadow:0 10px 40px #0005;
-  font-size:12px;transition:opacity .2s,transform .2s
+  max-width:calc(100% - 28px);text-align:center;padding:12px 16px;
+  border-radius:12px;border:1px solid #57f4e577;
+  background:linear-gradient(120deg,#20312b,#2b1c31,#302416);
+  color:var(--text);box-shadow:0 10px 40px #0005;font-size:12px;
+  transition:opacity .2s,transform .2s
 }
 .toast.show{opacity:1;transform:translate(-50%,0)}
-footer{padding:18px 0 27px;text-align:center;color:#897c62;font-size:10px;letter-spacing:2px}
+footer{padding:18px 0 27px;text-align:center;color:#aa9270;font-size:10px;letter-spacing:2px}
 @media(max-width:760px){
   .dashboard{grid-template-columns:1fr}
   .stage{min-height:360px}
@@ -350,7 +405,10 @@ footer{padding:18px 0 27px;text-align:center;color:#897c62;font-size:10px;letter
 <header>
   <div class="logo">
     <div class="logo-mark">📺</div>
-    <div><h1>ROBO-BUDDY TV</h1><small>YOUR LITTLE LIVING TELEVISION</small></div>
+    <div>
+      <h1>ROBO-BUDDY TV</h1>
+      <small>YOUR LITTLE LIVING TELEVISION</small>
+    </div>
   </div>
   <div class="status-pill">POWER: <b id="onlineStatus">● ONLINE</b></div>
 </header>
@@ -358,7 +416,7 @@ footer{padding:18px 0 27px;text-align:center;color:#897c62;font-size:10px;letter
 <section class="intro">
   <div class="eyebrow">A LITTLE SCREEN WITH A BIG HEART</div>
   <h2>Your tiny TV friend. 💛</h2>
-  <p>A chunky little television with a mind of its own. Feed it, charge it, clean its screen, explore channels and help it grow happier. It remembers your friendship on this device.</p>
+  <p>A chunky little television with a mind of its own. Feed it, charge it, clean its screen, explore channels and help it grow happier. It remembers your friendship in this browser.</p>
 </section>
 
 <main class="dashboard">
@@ -379,12 +437,11 @@ footer{padding:18px 0 27px;text-align:center;color:#897c62;font-size:10px;letter
         <span class="sticker" id="tvSticker"></span>
         <span class="tv-sleep-label">Z Z Z</span>
         <div class="screen-frame">
-          <div class="crt-screen" id="crtScreen" role="button" tabindex="0" aria-label="Pet your TV">
+          <div class="crt-screen" id="crtScreen" data-channel="0" role="button" tabindex="0" aria-label="Pet your TV">
             <div class="tv-face">
               <div class="eyes"><i class="eye"></i><i class="eye"></i></div>
               <div class="tv-mouth"></div>
             </div>
-            <div class="tv-extra" id="screenCaption">HELLO, FRIEND</div>
           </div>
         </div>
         <div class="tv-controls">
@@ -480,8 +537,8 @@ footer{padding:18px 0 27px;text-align:center;color:#897c62;font-size:10px;letter
 <section class="panel">
   <div class="panel-heading"><h3>/// PLAY TOGETHER</h3><span>PIXEL CATCH</span></div>
   <div class="control-group" style="border-top:0">
-    <div class="robot-note">Your TV spotted a tiny pixel hiding in the static! Start a round and find the matching symbol to win happiness and friendship.</div>
-    <div class="mini-game" id="miniGame">
+    <div class="robot-note">Your TV spotted a tiny pixel hiding in the static! Find the matching symbol to win happiness and friendship.</div>
+    <div class="mini-game">
       <h4 id="gameTitle">📺 THE PIXEL IS HIDING!</h4>
       <p id="gameDescription">Press START to find the secret symbol.</p>
       <div class="pixel-target" id="pixelTarget">❔</div>
@@ -497,7 +554,7 @@ footer{padding:18px 0 27px;text-align:center;color:#897c62;font-size:10px;letter
   <div class="log-list" id="logList" aria-live="polite"></div>
   <div class="control-group" style="padding-left:0;padding-right:0">
     <h4>STICKER COLLECTION</h4>
-    <div class="collection" id="stickerCollection"><span class="empty">No stickers yet. Give your TV one!</span></div>
+    <div class="collection" id="stickerCollection"></div>
     <div class="robot-note" style="margin-top:12px">Your TV saves its stats, colors, stickers and memories in this browser.</div>
   </div>
 </section>
@@ -529,8 +586,8 @@ const startingState = () => ({
   skin:'classic',
   stickers:[],
   log:[
-    'CRT-09 booted successfully.',
-    'Little TV is happy to meet you.'
+    {message:'CRT-09 booted successfully.',time:'NOW'},
+    {message:'Little TV is happy to meet you.',time:'NOW'}
   ]
 });
 
@@ -542,45 +599,61 @@ const channels = [
   {name:'SILLY CHANNEL',message:'BREAKING NEWS: You are officially my favorite viewer. 📺'}
 ];
 
-const stickerChoices = ['⭐','🌈','💛','🍀','🎵','🍪','🌙','✨','🪐','🌼'];
-let state = startingState();
-let ticks = 0;
-let toastTimer = null;
-let gameTarget = null;
-let gameActive = false;
+const stickerChoices=['⭐','🌈','💛','🍀','🎵','🍪','🌙','✨','🪐','🌼'];
+let state=startingState();
+let ticks=0;
+let toastTimer=null;
+let gameTarget=null;
+let gameActive=false;
 
-function clamp(value,min,max) {
+function clamp(value,min,max){
   return Math.max(min,Math.min(max,value));
 }
 
-function save() {
-  try {
+function friendshipLevel(){
+  return Math.min(5,Math.floor(state.bond/20)+1);
+}
+
+function save(){
+  try{
     localStorage.setItem(SAVE_KEY,JSON.stringify(state));
-  } catch(error) {
-    // The pet continues working if browser saving is unavailable.
+  }catch(error){
+    // The pet continues working if saving is unavailable.
   }
 }
 
-function load() {
-  try {
-    const saved = JSON.parse(localStorage.getItem(SAVE_KEY) || 'null');
-    if (!saved || typeof saved !== 'object') return;
-    state = {...startingState(),...saved};
-    ['battery','hunger','happiness','cleanliness','bond'].forEach(key => {
-      state[key] = clamp(Number(state[key]) || 0,0,100);
+function load(){
+  try{
+    const saved=JSON.parse(localStorage.getItem(SAVE_KEY)||'null');
+    if(!saved||typeof saved!=='object')return;
+
+    state={...startingState(),...saved};
+
+    ['battery','hunger','happiness','cleanliness','bond'].forEach(key=>{
+      const number=Number(state[key]);
+      state[key]=Number.isFinite(number)?clamp(number,0,100):0;
     });
-    if (!['happy','curious','sleepy','grumpy'].includes(state.emotion)) state.emotion='happy';
-    if (!['classic','moss','lilac','blue'].includes(state.skin)) state.skin='classic';
-    if (!Array.isArray(state.stickers)) state.stickers=[];
-    if (!Array.isArray(state.log)) state.log=[];
-    if (!Number.isInteger(state.channelIndex)) state.channelIndex=0;
+
+    if(!['happy','curious','sleepy','grumpy'].includes(state.emotion)){
+      state.emotion='happy';
+    }
+    if(!['classic','moss','lilac','blue'].includes(state.skin)){
+      state.skin='classic';
+    }
+    if(!Array.isArray(state.stickers))state.stickers=[];
+    if(!Array.isArray(state.log))state.log=[];
+    state.stickers=state.stickers.filter(item=>typeof item==='string').slice(0,10);
+    if(!Number.isInteger(state.channelIndex))state.channelIndex=0;
     state.channelIndex=((state.channelIndex%channels.length)+channels.length)%channels.length;
-  } catch(error) {
-    state = startingState();
+    state.charging=Boolean(state.charging)&&state.battery<100;
+    state.sleeping=Boolean(state.sleeping);
+    if(typeof state.message!=='string')state.message=startingState().message;
+  }catch(error){
+    state=startingState();
   }
 }
 
-function toast(message) {
+function toast(message){
   const el=$('#toast');
   el.textContent=message;
   el.classList.add('show');
@@ -588,57 +661,55 @@ function toast(message) {
   toastTimer=setTimeout(()=>el.classList.remove('show'),2300);
 }
 
-function addLog(message) {
+function addLog(message){
   state.log.unshift({
     message,
     time:new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})
   });
-  if (state.log.length>7) state.log.length=7;
+  if(state.log.length>7)state.log.length=7;
   renderLog();
 }
 
-function say(message) {
+function say(message){
   state.message=message;
   $('#speech').textContent=message;
 }
 
-function powered() {
+function powered(){
   return state.battery>0;
 }
 
-function wakeUp() {
-  if (state.sleeping) {
-    state.sleeping=false;
-  }
+function wakeUp(){
+  if(state.sleeping)state.sleeping=false;
 }
 
-function bond(amount) {
-  const oldLevel=Math.floor(state.bond/20)+1;
+function gainBond(amount){
+  const oldLevel=friendshipLevel();
   state.bond=clamp(state.bond+amount,0,100);
-  const newLevel=Math.floor(state.bond/20)+1;
-  if(newLevel>oldLevel) {
+  const newLevel=friendshipLevel();
+  if(newLevel>oldLevel){
     say('BEEP! FRIENDSHIP LEVEL UP! You are my best human! 💛');
     addLog('Friendship reached level '+newLevel+'.');
     toast('FRIENDSHIP LEVEL UP! 💛');
   }
 }
 
-function renderMeters() {
-  const values = {
+function renderMeters(){
+  const values={
     battery:state.battery,
     hunger:state.hunger,
     happiness:state.happiness,
     clean:state.cleanliness,
     bond:state.bond
   };
-  const labels = {
+  const labels={
     battery:$('#batteryValue'),
     hunger:$('#hungerValue'),
     happiness:$('#happinessValue'),
     clean:$('#cleanValue'),
     bond:$('#bondValue')
   };
-  const bars = {
+  const bars={
     battery:$('#batteryBar'),
     hunger:$('#hungerBar'),
     happiness:$('#happinessBar'),
@@ -652,53 +723,56 @@ function renderMeters() {
     bars[key].classList.toggle('low',values[key]<=20);
   });
 
-  $('#batteryNote').textContent =
+  $('#batteryNote').textContent=
     state.battery===0?'Power lost. Please connect the charger.':
     state.battery<=20?'Low battery! It needs a charge.':
     state.battery<=45?'Getting low. Charging would help.':
     'Plenty of power for more TV adventures.';
 
-  $('#hungerNote').textContent =
+  $('#hungerNote').textContent=
     state.hunger===0?'Its tiny tummy is empty!':
     state.hunger<=20?'The TV is getting hungry.':
     state.hunger<=45?'A little snack would be lovely.':
     'Not hungry yet.';
 
-  $('#happinessNote').textContent =
+  $('#happinessNote').textContent=
     state.happiness>=85?'BEST. DAY. EVER. 💛':
     state.happiness>=50?'A little TV joy!':
     state.happiness>=25?'Could use a little attention.':
     'Feeling a bit down. Give it some love!';
 
-  $('#cleanNote').textContent =
+  $('#cleanNote').textContent=
     state.cleanliness>=80?'Nice and shiny.':
     state.cleanliness>=45?'A few smudges on the screen.':
     'Very dusty! Time for a clean.';
 
-  const level=Math.min(5,Math.floor(state.bond/20)+1);
-  $('#levelValue').textContent=level;
-  $('#bondNote').textContent =
-    level===5?'Best friends forever! ⭐':
-    level===4?'Really good friends!':
-    level===3?'Getting closer every day.':
-    level===2?'Your friendship is growing.':
+  $('#levelValue').textContent=friendshipLevel();
+  $('#bondNote').textContent=
+    friendshipLevel()===5?'Best friends forever! ⭐':
+    friendshipLevel()===4?'Really good friends!':
+    friendshipLevel()===3?'Getting closer every day.':
+    friendshipLevel()===2?'Your friendship is growing.':
     'You just met! A friendship is starting.';
 }
 
-function renderTV() {
+function renderTV(){
   const shell=$('#tvShell');
   const alive=powered();
+
   shell.dataset.emotion=state.emotion;
   shell.dataset.skin=state.skin;
   shell.classList.toggle('off',!alive);
-  shell.classList.toggle('sleeping',state.sleeping && alive);
-  shell.classList.toggle('charging',state.charging && alive);
+  shell.classList.toggle('sleeping',state.sleeping&&alive);
+  shell.classList.toggle('charging',state.charging&&alive);
   shell.classList.toggle('dirty',state.cleanliness<35);
+
+  // Screen content is ONLY the face. No "Hello, friend" label inside it.
+  $('#crtScreen').dataset.channel=String(state.channelIndex);
 
   $('#onlineStatus').textContent=alive?'● ONLINE':'● OFFLINE';
   $('#onlineStatus').style.color=alive?'var(--green)':'var(--red)';
 
-  $('#conditionLabel').textContent =
+  $('#conditionLabel').textContent=
     !alive?'POWER LOST':
     state.sleeping?'SLEEPING':
     state.charging?'CHARGING':
@@ -715,15 +789,6 @@ function renderTV() {
         ?'BROWN + GOLD · <b>TAKING A NAP</b>'
         :'BROWN + GOLD · <b>SYSTEM ACTIVE</b>';
 
-  $('#powerCaption');
-  $('#screenCaption').textContent =
-    !alive?'NO SIGNAL':
-    state.sleeping?'ZZZ...':
-    state.emotion==='happy'?'HELLO, FRIEND':
-    state.emotion==='curious'?'WHAT IS THAT?':
-    state.emotion==='grumpy'?'HMPH.':
-    'SWEET DREAMS';
-
   $('#channelLabel').textContent=
     'CHANNEL '+String(state.channelIndex+1).padStart(2,'0')+' · '+channels[state.channelIndex].name;
   $('#modelLabel').textContent='CRT-09 · '+state.skin.toUpperCase();
@@ -735,53 +800,54 @@ function renderTV() {
 
   $('#sleepLabel').textContent=state.sleeping?'WAKE UP TV':'SLEEP MODE';
 
-  // Only care and play controls are disabled when the TV has no power.
   $$('[data-action="feed"],[data-action="pet"],[data-action="clean"],[data-action="emotion"],[data-action="play"],[data-action="sticker"],[data-action="channel"],[data-action="reboot"],[data-action="start-game"]')
     .forEach(button=>button.disabled=!alive);
 
-  $('#careHint').textContent =
+  $('#careHint').textContent=
     !alive?'Your TV powered down. Connect the charger and give it a few seconds to wake up.':
     state.sleeping?'Your TV is napping. Wake it up or connect the charger.':
     state.charging?'The charger is working! Battery increases by 2% every second.':
     'The battery loses 1% every six seconds while awake. Sleep mode pauses its needs.';
 
-  $$('.skin-btn').forEach(button=>button.classList.toggle('active',button.dataset.skin===state.skin));
-  $('#tvSticker').textContent=state.stickers.length?state.stickers[state.stickers.length-1]:'';
+  $$('.skin-btn').forEach(button=>{
+    button.classList.toggle('active',button.dataset.skin===state.skin);
+  });
+  $('#tvSticker').textContent=state.stickers.length
+    ?state.stickers[state.stickers.length-1]:'';
 }
 
-function renderLog() {
+function renderLog(){
   const list=$('#logList');
   list.innerHTML='';
 
-  if(!state.log.length) {
+  if(!state.log.length){
     const empty=document.createElement('div');
     empty.className='log-entry';
     empty.textContent='Nothing in memory yet.';
     list.appendChild(empty);
-    return;
+  }else{
+    state.log.forEach(entry=>{
+      const row=document.createElement('div');
+      row.className='log-entry';
+      const dot=document.createElement('span');
+      dot.textContent='◆';
+      const message=document.createElement('div');
+      message.textContent=typeof entry==='string'
+        ?entry
+        :(entry.time+' · '+entry.message);
+      row.append(dot,message);
+      list.appendChild(row);
+    });
   }
-
-  state.log.forEach(entry=>{
-    const row=document.createElement('div');
-    row.className='log-entry';
-    const dot=document.createElement('span');
-    dot.textContent='◆';
-    const message=document.createElement('div');
-    message.textContent=typeof entry==='string'
-      ?entry
-      :(entry.time+' · '+entry.message);
-    row.append(dot,message);
-    list.appendChild(row);
-  });
 
   const collection=$('#stickerCollection');
   collection.innerHTML='';
-  if(!state.stickers.length) {
+  if(!state.stickers.length){
     const empty=document.createElement('span');
     empty.className='empty';
     empty.textContent='No stickers yet. Give your TV one!';
     collection.appendChild(empty);
-  } else {
+  }else{
     state.stickers.forEach(sticker=>{
       const item=document.createElement('span');
       item.textContent=sticker;
@@ -790,16 +856,16 @@ function renderLog() {
   }
 }
 
-function render() {
+function render(){
   renderMeters();
   renderTV();
   renderLog();
 }
 
-function feed() {
+function feed(){
   if(!powered())return;
   wakeUp();
-  if(state.hunger>=100) {
+  if(state.hunger>=100){
     say('My tummy is already full! Thank you, though. 🍪');
     toast('TUMMY FULL!');
     render();return;
@@ -807,15 +873,15 @@ function feed() {
   state.hunger=clamp(state.hunger+30,0,100);
   state.happiness=clamp(state.happiness+6,0,100);
   state.battery=clamp(state.battery-1,0,100);
-  bond(2);
+  gainBond(2);
   state.emotion='happy';
   say('NOM NOM NOM! BEEP! BEST SNACK EVER! 🍪');
   addLog('TV enjoyed a snack.');
   render();save();
 }
 
-function pet() {
-  if(!powered()) {
+function pet(){
+  if(!powered()){
     say('... *tiny screen stays dark*');
     return;
   }
@@ -823,26 +889,26 @@ function pet() {
   state.happiness=clamp(state.happiness+8,0,100);
   state.cleanliness=clamp(state.cleanliness-1,0,100);
   state.battery=clamp(state.battery-1,0,100);
-  bond(3);
+  gainBond(3);
   state.emotion='happy';
   say('Hehehe! Screen boops! More love please! 💛');
   addLog('You gave the TV a little screen boop.');
   render();save();
 }
 
-function cleanTV() {
+function cleanTV(){
   if(!powered())return;
   wakeUp();
   state.cleanliness=clamp(state.cleanliness+32,0,100);
   state.happiness=clamp(state.happiness+3,0,100);
-  bond(1);
+  gainBond(1);
   say('SQUEAK SQUEAK! Wow, I can see everything! ✨');
   addLog('TV screen cleaned.');
   toast('SCREEN SPARKLING!');
   render();save();
 }
 
-function emotion(name) {
+function changeEmotion(name){
   if(!powered())return;
   wakeUp();
 
@@ -856,19 +922,19 @@ function emotion(name) {
 
   state.emotion=name;
   state.happiness=clamp(state.happiness+change[name],0,100);
-  if(name==='happy'||name==='curious')bond(1);
+  if(name==='happy'||name==='curious')gainBond(1);
   say(messages[name]);
   addLog('TV is feeling '+name+'.');
   render();save();
 }
 
-function charge() {
-  if(state.charging) {
+function charge(){
+  if(state.charging){
     state.charging=false;
     say('Charger disconnected. Thanks for the electricity! 🔌');
     addLog('Charger disconnected.');
-  } else {
-    if(state.battery>=100) {
+  }else{
+    if(state.battery>=100){
       say('My battery is already full! But thank you. ⚡');
       toast('BATTERY ALREADY FULL!');
       return;
@@ -883,17 +949,17 @@ function charge() {
   render();save();
 }
 
-function sleepToggle() {
-  if(!powered()) {
+function sleepToggle(){
+  if(!powered()){
     say('I need some electricity before I can nap or wake up. 🔌');
     return;
   }
   state.sleeping=!state.sleeping;
-  if(state.sleeping) {
+  if(state.sleeping){
     state.emotion='sleepy';
     say('Zzz... saving my little circuits for tomorrow. 🌙');
     addLog('TV entered sleep mode.');
-  } else {
+  }else{
     state.emotion='happy';
     say('BEEP! Good morning, even if it is not morning! ☀️');
     addLog('TV woke up.');
@@ -901,30 +967,32 @@ function sleepToggle() {
   render();save();
 }
 
-function nextChannel() {
+function nextChannel(){
   if(!powered())return;
   wakeUp();
   state.channelIndex=(state.channelIndex+1)%channels.length;
   state.emotion='curious';
-  say(channels[state.channelIndex].message);
   state.happiness=clamp(state.happiness+2,0,100);
+  say(channels[state.channelIndex].message);
   addLog('Changed channel to '+channels[state.channelIndex].name+'.');
   render();save();
 }
 
-function giveSticker() {
+function giveSticker(){
   if(!powered())return;
   wakeUp();
-  if(state.stickers.length>=10) {
+
+  if(state.stickers.length>=10){
     say('Wow, my TV case is FULL of stickers! No more room! ⭐');
     toast('STICKER COLLECTION FULL!');
     return;
   }
+
   const available=stickerChoices.filter(item=>!state.stickers.includes(item));
   const sticker=available[Math.floor(Math.random()*available.length)]||'⭐';
   state.stickers.push(sticker);
   state.happiness=clamp(state.happiness+4,0,100);
-  bond(4);
+  gainBond(4);
   state.emotion='happy';
   say('LOOK AT MY NEW STICKER! I LOVE IT! '+sticker);
   addLog('You decorated the TV with '+sticker+'.');
@@ -932,11 +1000,11 @@ function giveSticker() {
   render();save();
 }
 
-function reboot() {
-  if(!powered()) {
+function reboot(){
+  if(!powered()){
     say('I need electricity before I can reboot. 🔌');return;
   }
-  if(state.battery<8) {
+  if(state.battery<8){
     say('Not enough power to reboot! Please charge me first.');return;
   }
   wakeUp();
@@ -948,7 +1016,7 @@ function reboot() {
   render();save();
 }
 
-function setSkin(skin) {
+function setSkin(skin){
   if(!['classic','moss','lilac','blue'].includes(skin))return;
   state.skin=skin;
   say(skin==='classic'
@@ -958,17 +1026,18 @@ function setSkin(skin) {
   render();save();
 }
 
-/* PIXEL CATCH MINI-GAME */
+/* MINI-GAME: PIXEL CATCH */
 const pixelSymbols=['⭐','🍀','💛','🌙','🎵','🪐','🍪','✨'];
 
-function startGame() {
+function startGame(){
   if(!powered())return;
   wakeUp();
   gameActive=true;
   gameTarget=pixelSymbols[Math.floor(Math.random()*pixelSymbols.length)];
+
   const other=pixelSymbols.filter(item=>item!==gameTarget);
   const options=[gameTarget];
-  while(options.length<4) {
+  while(options.length<4){
     const item=other[Math.floor(Math.random()*other.length)];
     if(!options.includes(item))options.push(item);
   }
@@ -978,6 +1047,7 @@ function startGame() {
   $('#gameDescription').textContent='Find this exact symbol in the four boxes below.';
   $('#pixelTarget').textContent=gameTarget;
   $('#pixelOptions').innerHTML='';
+
   options.forEach(symbol=>{
     const button=document.createElement('button');
     button.type='button';
@@ -987,25 +1057,26 @@ function startGame() {
     button.setAttribute('aria-label','Choose '+symbol);
     $('#pixelOptions').appendChild(button);
   });
+
   $('#startGame').textContent='↻ NEW ROUND';
   $('#gameFeedback').textContent='One correct click wins!';
 }
 
-function guessPixel(symbol) {
+function guessPixel(symbol){
   if(!gameActive)return;
   gameActive=false;
 
-  if(symbol===gameTarget) {
+  if(symbol===gameTarget){
     state.happiness=clamp(state.happiness+12,0,100);
     state.battery=clamp(state.battery-2,0,100);
-    bond(8);
+    gainBond(8);
     state.emotion='happy';
     say('YOU FOUND IT! WE MAKE AN AMAZING TEAM! 🎉');
     $('#gameFeedback').textContent='CORRECT! Happiness +12 · Friendship +8';
     $('#gameTitle').textContent='🏆 PIXEL FOUND!';
     addLog('You and the TV won Pixel Catch.');
     toast('YOU FOUND THE PIXEL! 🎉');
-  } else {
+  }else{
     state.happiness=clamp(state.happiness-2,0,100);
     say('Whoops! The tiny pixel escaped! Try again. 🙈');
     $('#gameFeedback').textContent='Not that one! Start another round.';
@@ -1020,31 +1091,35 @@ function guessPixel(symbol) {
   render();save();
 }
 
-function resetTV() {
-  const accepted=confirm('Reset your TV to its original condition? This resets its stats, color, stickers and memory.');
+function resetTV(){
+  const accepted=confirm(
+    'Reset your TV to its original condition? This resets its stats, color, stickers and memory.'
+  );
   if(!accepted)return;
+
   state=startingState();
+  ticks=0;
   gameActive=false;
   gameTarget=null;
-  ticks=0;
   $('#gameTitle').textContent='📺 THE PIXEL IS HIDING!';
   $('#gameDescription').textContent='Press START to find the secret symbol.';
   $('#pixelTarget').textContent='❔';
   $('#pixelOptions').innerHTML='';
   $('#gameFeedback').textContent='';
   $('#startGame').textContent='▶ START ROUND';
+
   say('Fresh start! BEEP! I am ready to meet you again. 💛');
   addLog('TV returned to its original condition.');
   render();save();
   toast('TV RESET!');
 }
 
-function clearLog() {
+function clearLog(){
   state.log=[];
   renderLog();save();
 }
 
-function handleAction(button) {
+function handleAction(button){
   const action=button.dataset.action;
   if(action==='feed')feed();
   else if(action==='pet')pet();
@@ -1052,7 +1127,7 @@ function handleAction(button) {
   else if(action==='charge')charge();
   else if(action==='sleep')sleepToggle();
   else if(action==='channel')nextChannel();
-  else if(action==='emotion')emotion(button.dataset.emotion);
+  else if(action==='emotion')changeEmotion(button.dataset.emotion);
   else if(action==='sticker')giveSticker();
   else if(action==='reboot')reboot();
   else if(action==='reset')resetTV();
@@ -1062,34 +1137,36 @@ function handleAction(button) {
 
 document.addEventListener('click',event=>{
   const skin=event.target.closest('[data-skin]');
-  if(skin) {
+  if(skin){
     setSkin(skin.dataset.skin);
     return;
   }
+
   const pixel=event.target.closest('[data-pixel]');
-  if(pixel) {
+  if(pixel){
     guessPixel(pixel.dataset.pixel);
     return;
   }
+
   const button=event.target.closest('[data-action]');
   if(button)handleAction(button);
 });
 
 $('#crtScreen').addEventListener('click',pet);
 $('#crtScreen').addEventListener('keydown',event=>{
-  if(event.key==='Enter'||event.key===' ') {
-    event.preventDefault();pet();
+  if(event.key==='Enter'||event.key===' '){
+    event.preventDefault();
+    pet();
   }
 });
 
-function tick() {
+function tick(){
   ticks++;
 
-  if(state.charging) {
+  if(state.charging){
     state.battery=clamp(state.battery+2,0,100);
-    if(state.battery>0 && state.sleeping)state.sleeping=false;
 
-    if(state.battery>=100) {
+    if(state.battery>=100){
       state.battery=100;
       state.charging=false;
       state.happiness=clamp(state.happiness+4,0,100);
@@ -1097,11 +1174,12 @@ function tick() {
       addLog('Battery fully charged.');
       toast('BATTERY FULL!');
     }
-  } else if(powered()&&!state.sleeping&&ticks%6===0) {
+  }else if(powered()&&!state.sleeping&&ticks%6===0){
     state.battery=clamp(state.battery-1,0,100);
 
-    if(state.battery===0) {
+    if(state.battery===0){
       state.charging=false;
+      state.sleeping=false;
       state.emotion='sleepy';
       say('... beep... power... low... screen going dark...');
       addLog('Battery empty. TV powered down.');
@@ -1110,17 +1188,23 @@ function tick() {
   }
 
   // Sleeping pauses hunger, happiness and cleanliness decay.
-  if(powered()&&!state.sleeping) {
+  if(powered()&&!state.sleeping){
     if(ticks%15===0)state.hunger=clamp(state.hunger-1,0,100);
-    if(ticks%22===0) {
-      state.happiness=clamp(state.happiness-(state.hunger<=10?3:1),0,100);
-    }
-    if(ticks%45===0)state.cleanliness=clamp(state.cleanliness-1,0,100);
 
-    if(state.hunger===0&&ticks%30===0) {
+    if(ticks%22===0){
+      state.happiness=clamp(
+        state.happiness-(state.hunger<=10?3:1),0,100
+      );
+    }
+
+    if(ticks%45===0){
+      state.cleanliness=clamp(state.cleanliness-1,0,100);
+    }
+
+    if(state.hunger===0&&ticks%30===0){
       say('My tummy is rumbling. Snack, please? 🍪');
     }
-    if(state.cleanliness<=15&&ticks%40===0) {
+    if(state.cleanliness<=15&&ticks%40===0){
       say('I have so many smudges... could you clean my screen? 🧽');
     }
   }
